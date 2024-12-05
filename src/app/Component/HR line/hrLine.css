@@ -1,0 +1,14 @@
+.HrLineRight{
+    position: absolute;
+    right: 0;
+    width: 90%;
+    height: 5px;
+    background: rgb(72, 72, 240);
+}
+.HrLineLeft{
+    position: absolute;
+    left: 0;
+    width: 90%;
+    height: 5px;
+    background: rgb(72, 72, 240);
+}

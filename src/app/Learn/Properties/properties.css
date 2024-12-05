@@ -1,0 +1,70 @@
+.property_para {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+
+
+}
+
+.properties_land {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.properties_name {
+    font-size: 17px;
+    font-weight: 600;
+    color: #e21c1c;
+}
+
+.properties_addres {
+    color: #0161ff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.properties_land {
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+}
+
+.details {
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.price {
+    font-size: 19px;
+    font-weight: 600;
+    color: rgb(27, 27, 27);
+}
+
+.onwords {
+    font-size: 14px;
+}
+
+.tag {
+    text-wrap: wrap;
+    font-size: 15px;
+}
+
+.luxurious {
+    font-weight: 600;
+}
+
+.contact_btn {
+    background-color: #e6eefe;
+    color: #0161ff;
+}
+
+.PropertiesCard {
+    max-height: 500px;
+}

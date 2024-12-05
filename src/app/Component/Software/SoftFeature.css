@@ -1,0 +1,82 @@
+.SoftMain {
+  max-width: 1200px;
+}
+
+.SoftImg {
+  max-width: 499px;
+  max-height: 600px;
+}
+
+.SoftUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+}
+
+.SoftUp h1 {
+  font-size: 22px;
+}
+
+
+
+.SoftUp ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.SoftUp ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px 0px 0px 20px;
+}
+
+.SoftUp ul li img {
+  width: 50px;
+}
+
+.SoftUp ul li p {
+  height: 70px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.SoftUp ul li .SF-des {
+  font-size: 16px;
+  /* font-weight: bold; */
+  padding: 0px 10px 0px 10px;
+
+}
+
+.SF-img {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(5, 55, 255, 0.075);
+  border-radius: 50%;
+}
+
+.SoftUp ul li p:nth-child(odd) {
+  padding: 0px 10px 0px 10px;
+}
+
+.SoftUp ul li p:nth-child(even) {
+  padding: 0px 10px 0px 10px;
+}
+
+.SoftImg img {
+  width: auto;
+  height: auto;
+  max-width: 80%;
+
+  max-height: 100%;
+}

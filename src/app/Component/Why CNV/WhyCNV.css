@@ -1,0 +1,90 @@
+.WhyCNV-mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px 50px 0px;
+}
+
+.WhyCNV-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1200px;
+}
+
+
+
+.WhyCNV-FirstCards {
+  max-width: 800px;
+}
+
+.WhyCNV-containerDesc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.WhyCNV-containerDesc h1 {
+  font-size: 18px;
+  /* font-weight: bolder; */
+}
+
+.WhyCNV-containerDesc img {
+  margin: 0px 0px 20px 0px;
+  width: 250px;
+  height: 15px;
+}
+
+.WhyCNV-FirstCards ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.WhyCNV-FirstCards ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px 0px 0px 20px;
+}
+
+.WhyCNV-FirstCards ul li img {
+  width: 50px;
+}
+
+.WhyCNV-FirstCards ul li p {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.WhyCNV-FirstCards ul li .WhyCNV-FCdes {
+  font-size: 15px;
+  /* font-weight: bold; */
+  padding: 10px;
+}
+
+.WhyCNV-FCimg {
+  height: 60px;
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(5, 55, 255, 0.075);
+  border-radius: 50%;
+}
+
+.WhyCNV-FirstCards ul li p:nth-child(odd) {
+  padding: 0px 1px 0px 1px;
+}
+
+.WhyCNV-FirstCards ul li p:nth-child(even) {
+  padding: 0px 10px 0px 10px;
+}
