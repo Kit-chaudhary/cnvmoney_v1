@@ -4,22 +4,48 @@ import React, { useEffect, useState } from "react";
 import { FormsShow } from "./actions";
 import Link from "next/link";
 import { FaFilePdf } from "react-icons/fa";
-const FormsList = () => {
-  const [forms, setForms] = useState([]);
-  const [error, setError] = useState(null);
-  const [selectedFormType, setSelectedFormType] = useState("All");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [showButton, setShowButton] = useState(false);
-  const [isToggled, setIsToggled] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [formsPerPage] = useState(10);
-  const [nfodata, setNfoData] = useState([]);
-  const [formNfoData, setformNfoData] = useState([]);
+
+// Define interfaces for type safety
+interface Form {
+  amcName: string;
+  fileType: string;
+  fileLink: string;
+  formType: string;
+}
+
+interface NfoData {
+  schemecode: string;
+  LegalNames: string;
+  AMFIType: string;
+  nfo_open: string;
+  nfo_close: string;
+  mininvt: string;
+  s_name?: string;
+  opt_code: number;
+}
+
+interface FormNfoData {
+  amcName: string;
+  fileLink: string;
+}
+
+const FormsList: React.FC = () => {
+  const [forms, setForms] = useState<Form[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedFormType, setSelectedFormType] = useState<string>("All");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [showButton, setShowButton] = useState<boolean>(false);
+  const [isToggled, setIsToggled] = useState<boolean>(false);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [formsPerPage] = useState<number>(10);
+  const [nfodata, setNfoData] = useState<NfoData[]>([]);
+  const [formNfoData, setformNfoData] = useState<FormNfoData[]>([]);
 
   const handleToggle = () => {
     setIsToggled((prevState) => !prevState);
   };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,9 +54,9 @@ const FormsList = () => {
           setForms(response.formData);
           setformNfoData(response.nfoData);
         } else {
-          setError(`Error: ${response.error}`);
+          setError(`Error: ${response}`);
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error(`Error fetching forms: ${error.message}`);
         setError(`Error: ${error.message}`);
       }
@@ -46,7 +72,7 @@ const FormsList = () => {
             },
           }
         );
-        const nfoData = await response.json();
+        const nfoData: NfoData[] = await response.json();
         const filteredData = nfoData.filter((item) => item.opt_code !== 2);
         setNfoData(filteredData);
       } catch (error) {
@@ -97,9 +123,9 @@ const FormsList = () => {
       ? filteredAndSearchedNFO.length
       : filteredAndSearchedForms.length;
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-  const highlightMatch = (text, searchTerm) => {
+  const highlightMatch = (text: string, searchTerm: string) => {
     if (!searchTerm) return text;
     const regex = new RegExp(`(${searchTerm})`, "gi");
     return text.replace(
@@ -121,7 +147,7 @@ const FormsList = () => {
   ];
 
   const renderNfoTable = () => {
-    const filteredData = currentItems.map((fundData) => {
+    const filteredData = currentItems.map((fundData: any) => {
       const foundnfoData = formNfoData.find(
         (item) => parseInt(fundData.schemecode) === parseInt(item.amcName)
       );
@@ -149,13 +175,13 @@ const FormsList = () => {
             <tr key={index}>
               <td className="border p-2">{nfo.LegalNames}</td>
               <td className="border p-2">{nfo.AMFIType}</td>
-              <td className="border p-2">{formatDate(nfo.nfo_open)}</td>
-              <td className="border p-2">{formatDate(nfo.nfo_close)}</td>
+              <td className="border p-2">{nfo.nfo_open}</td>
+              <td className="border p-2">{nfo.nfo_close}</td>
               <td className="border p-2">₹ {nfo.mininvt}</td>
               <td className="border p-2">
                 {nfo.fileLink !== -1 ? (
                   <Link
-                    href={nfo.fileLink}
+                    href={nfo.fileLink as string}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:underline flex items-center">
@@ -182,7 +208,7 @@ const FormsList = () => {
         </tr>
       </thead>
       <tbody>
-        {currentItems.map((form, index) => (
+        {currentItems.map((form: any, index) => (
           <tr key={index}>
             <td
               className="border py-2 px-4 text-gray-500"
@@ -326,20 +352,3 @@ const FormsList = () => {
 };
 
 export default FormsList;
-
-export const formatDate = (dateString) => {
-  const dateParts = dateString.split("/");
-  const day = parseInt(dateParts[0], 10);
-  const month = parseInt(dateParts[1], 10) - 1;
-  const year = parseInt(dateParts[2], 10);
-
-  // Create a new Date object
-  const date = new Date(year, month, day);
-
-  // Format the date as 'DD MMM YYYY' (e.g., 29 Oct 2024)
-  return date.toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
-};
