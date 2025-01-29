@@ -48,9 +48,10 @@ const AboutSection = () => {
     <>
       <div className="p-2 text-wrap mb-1">
         <p className="text-gray-500">
-          Credit & Vault Group established in 2014, with vast experience in
-          banking and finance over a period of 22 years with specialization in
-          Investments and Wealth Management .
+          CNVMONEY FinTech Pvt. Ltd. ( formally credit & vault group)
+          established in 2014, with vast experience in banking and finance over
+          a period of 22 years with specialization in Investments and Wealth
+          Management .
         </p>
         <p className="text-gray-500 mt-2">
           We are in to distribution of Financial Products to Retail and HNI
@@ -84,8 +85,7 @@ const AboutSection = () => {
           {data.map((item, id) => (
             <div
               className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 px-4 mb-6 company_container"
-              key={id}
-            >
+              key={id}>
               <div className="bg-white">
                 <div className="p-4 about_company">
                   <Image
@@ -95,12 +95,10 @@ const AboutSection = () => {
                     className={`company_image ${
                       item.imageUrl === "/about/2.png" ? "mb-1" : "mb-4"
                     }`}
-                    alt={item.imageUrl}
-                  ></Image>
+                    alt={item.imageUrl}></Image>
                   <h2
                     className="text-gray-700 p-2"
-                    style={{ color: "gray", fontWeight: 600 }}
-                  >
+                    style={{ color: "gray", fontWeight: 600 }}>
                     {item.header}
                   </h2>
                   <p className="text-gray-500 p-2">{item.info}</p>

@@ -56,12 +56,13 @@ const Footer = ({ value }) => {
                 className="mb-4"
               />
 
-              <p className="footer-cnv-address text-gray-500">
-                <span className="text-gray-700">Head Office : </span>
-                {address}
+              <p className="footer-cnv-address text-gray-500 ">
+                <span className="text-gray-700 ">Head Office : </span>
+                B-207, Gopal CHS, Ambadi Road, Opp- 60 Feet Road, Vasai West,
+                Palghar, Maharashtra - 401202
               </p>
               <div className="footer-des">
-                <Link href={`mailto:${email}`}>
+                <Link href={`mailto:info@cnvmoney.com`}>
                   <MdOutlineEmail
                     src={Mail}
                     alt="Mail icon"
@@ -70,7 +71,7 @@ const Footer = ({ value }) => {
                     // height={50}
                   />
 
-                  <p className="text-gray-500">{email}</p>
+                  <p className="text-gray-500">info@cnvmoney.com</p>
                 </Link>
 
                 <Link href={`tel:+91${phone}`}>
@@ -163,8 +164,7 @@ const Footer = ({ value }) => {
                   href={playStore}
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="drop-shadow-lg btn_color"
-                >
+                  className="drop-shadow-lg btn_color">
                   <p className="flex flex-row ">
                     <FontAwesomeIcon
                       icon={faGooglePlay}
@@ -177,8 +177,7 @@ const Footer = ({ value }) => {
                   href={appStore}
                   rel="noopener noreferrer"
                   target="_blank"
-                  className="drop-shadow-lg"
-                >
+                  className="drop-shadow-lg">
                   <p className="flex flex-row">
                     <FontAwesomeIcon icon={faAppStore} className="w-5 mt-1" />
                     &nbsp;App Store
@@ -195,8 +194,7 @@ const Footer = ({ value }) => {
                 <Link
                   href="https://www.instagram.com/cnvmoney"
                   rel="noopener noreferrer"
-                  target="_blank"
-                >
+                  target="_blank">
                   <FontAwesomeIcon
                     icon={faInstagram}
                     className="icons icons_instagram shadow-lg"
@@ -209,8 +207,7 @@ const Footer = ({ value }) => {
                   rel="noopener noreferrer"
                   target="_blank"
                   // style={{ background: "#0143a2" }}
-                  className="icon_body"
-                >
+                  className="icon_body">
                   <FontAwesomeIcon
                     icon={faFacebookF}
                     className="icons icon_facebook shadow-lg"
@@ -231,8 +228,7 @@ const Footer = ({ value }) => {
                   rel="noopener noreferrer"
                   target="_blank"
                   // style={{ background: "#0143a2" }}
-                  className="icon_body "
-                >
+                  className="icon_body ">
                   <FontAwesomeIcon
                     icon={faLinkedinIn}
                     className="icons icon_linked shadow-lg"
@@ -243,8 +239,7 @@ const Footer = ({ value }) => {
                 <Link
                   href="https://www.youtube.com/@cnvmoney"
                   rel="noopener noreferrer"
-                  target="_blank"
-                >
+                  target="_blank">
                   <FontAwesomeIcon
                     icon={faYoutube}
                     className="icons icon_youtube shadow-lg"
