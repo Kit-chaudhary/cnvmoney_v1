@@ -48,7 +48,7 @@ const AboutSection = () => {
     <>
       <div className="p-2 text-wrap mb-1">
         <p className="text-gray-500">
-          CNVMONEY FinTech Pvt. Ltd. ( formally credit & vault group)
+          CNVMONEY FinTech Pvt. Ltd. ( formerly credit & vault group)
           established in 2014, with vast experience in banking and finance over
           a period of 22 years with specialization in Investments and Wealth
           Management .
